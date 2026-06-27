@@ -1,0 +1,68 @@
+# ==========================
+# Python
+# ==========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+env/
+.venv/
+
+# IDE Settings
+.vscode/
+.idea/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Python cache
+.pytest_cache/
+.mypy_cache/
+
+# Environment variables
+.env
+
+# ==========================
+# Runtime-generated files
+# ==========================
+camouflage_map.json
+honeytrap_log.txt
+keystroke_test_output.txt
+keystroke_test_output2.txt
+
+# Secure Vault runtime folders
+secure_vault/camouflaged/
+secure_vault/honeytrap/
+secure_vault/logs/
+secure_vault/real/
+
+# Test outputs
+test_out/
+
+# Temporary files
+*.tmp
+*.temp
+
+# IPFS executable
+ipfs
+ipfs.exe
+
+# ==========================
+# Logs
+# ==========================
+*.log
+
+# ==========================
+# Build files
+# ==========================
+build/
+dist/
+*.spec
+
+# ==========================
+# Jupyter
+# ==========================
+.ipynb_checkpoints/
