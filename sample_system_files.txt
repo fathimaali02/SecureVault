@@ -1,0 +1,14 @@
+# System Files List - Plain Text Format
+# Each line: name | description | size | location
+# Lines starting with # are ignored
+
+kernel32.dll | Kernel Libraries | 512 KB | C:\Windows\System32\
+ntoskrnl.exe | Operating System Kernel | 8.2 MB | C:\Windows\System32\
+svchost.exe | Service Host Process | 1.3 MB | C:\Windows\System32\
+csrss.exe | Client/Server Runtime Subsystem | 256 KB | C:\Windows\System32\
+lsass.exe | Local Security Authority Process | 896 KB | C:\Windows\System32\
+explorer.exe | Windows Explorer | 3.4 MB | C:\Windows\
+taskhost.exe | Task Host Process | 512 KB | C:\Windows\System32\
+dwm.exe | Desktop Window Manager | 2.8 MB | C:\Windows\System32\
+spoolsv.exe | Print Spooler Service | 1.5 MB | C:\Windows\System32\
+services.exe | Services Process | 256 KB | C:\Windows\System32\
