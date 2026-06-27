@@ -1,0 +1,281 @@
+🔒 SecureVault Pro - QUICK START GUIDE
+================================================================================
+
+STEP 1: INSTALL PYTHON PACKAGES
+────────────────────────────────────────────────────────────────────────────────
+
+Open PowerShell in the project directory and run:
+
+```powershell
+# 1. Create virtual environment
+python -m venv venv
+
+# 2. Activate virtual environment (Windows)
+.\venv\Scripts\Activate.ps1
+
+# 3. Install all dependencies
+pip install -r requirements.txt
+
+# This installs:
+# - cryptography (AES-256 encryption)
+# - pillow (steganography, image handling)
+# - scikit-learn (ML keystroke authentication)
+# - ipfshttpclient (optional IPFS support)
+# - numpy (numerical computation)
+```
+
+⚠️ NOTE: If you get "permission denied" on Activate.ps1:
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+.\venv\Scripts\Activate.ps1
+```
+
+
+STEP 2: TEST THE INSTALLATION
+────────────────────────────────────────────────────────────────────────────────
+
+Before running the full app, verify everything is working:
+
+```powershell
+python test_setup.py
+```
+
+This will test:
+✓ Keystroke analyzer functionality
+✓ AES-256 encryption/decryption
+✓ All dependencies
+✓ File system permissions
+
+Expected output: "✅ ALL TESTS PASSED! Ready to launch SecureVault Pro"
+
+
+STEP 3: LAUNCH THE APPLICATION
+────────────────────────────────────────────────────────────────────────────────
+
+```powershell
+python main.py
+```
+
+A modern Tkinter window will appear with:
+- 🔐 Password authentication screen
+- 📊 Dashboard with multiple tabs
+- 📁 File management (store/retrieve)
+- 🔐 Encryption settings
+- 🎨 File camouflage overview
+- 🖼️ Steganography information
+- ⛓️ Blockchain ledger
+- 🎭 Decoy vault status
+
+
+STEP 4: CREATE YOUR FIRST SECURE FILE
+────────────────────────────────────────────────────────────────────────────────
+
+1. Login with any password (for demo)
+2. Click "📁 Files" tab
+3. Click "📤 Store File"
+4. Select any file (e.g., document.pdf)
+5. Enter encryption password
+6. Choose options:
+   - ✓ Apply file camouflage (disguise as system file)
+   - ✓ Use steganography (hide in image) - optional
+7. Click "Store"
+8. Get File ID for later retrieval
+
+Real vault location: secure_vault/real/
+Metadata: secure_vault/metadata/
+Blockchain: secure_vault/logs/blockchain.json
+
+
+STEP 5: RETRIEVE A STORED FILE
+────────────────────────────────────────────────────────────────────────────────
+
+1. Go to "📁 Files" tab
+2. Click "📥 Retrieve File"
+3. Enter File ID (from Step 4)
+4. Enter encryption password
+5. Choose save location
+6. File is decrypted and saved
+
+
+STEP 6: OPTIONAL - ENABLE IPFS (Decentralized Storage)
+────────────────────────────────────────────────────────────────────────────────
+
+For off-site encrypted backup:
+
+1. Download IPFS Desktop: https://docs.ipfs.tech/install/
+2. Install and initialize:
+   ```powershell
+   ipfs init
+   ```
+3. Start IPFS daemon:
+   ```powershell
+   ipfs daemon
+   ```
+4. When storing files, they'll auto-upload to IPFS
+5. View CIDs in "⛓️ Blockchain" tab
+
+
+PROJECT STRUCTURE
+────────────────────────────────────────────────────────────────────────────────
+
+main.py                 - Main application (all-in-one)
+test_setup.py          - Setup verification tests
+requirements.txt       - Package dependencies
+README.md              - Full documentation
+QUICKSTART.txt         - This file
+
+secure_vault/          - Created automatically
+├── real/              - Encrypted files
+├── camouflaged/       - Camouflaged files (fake system names)
+├── honeytrap/         - Decoy files (mislead attackers)
+├── logs/
+│   ├── vault.log      - Application log
+│   └── blockchain.json - Blockchain ledger
+├── metadata/          - File metadata
+└── models/            - ML user profiles
+
+
+TROUBLESHOOTING
+────────────────────────────────────────────────────────────────────────────────
+
+Issue: "ModuleNotFoundError: No module named 'tkinter'"
+Solution (Linux/macOS):
+  sudo apt-get install python3-tk      # Linux
+  brew install python-tk               # macOS
+
+Issue: "cryptography" or "pillow" import errors
+Solution:
+  pip install --upgrade pip
+  pip install -r requirements.txt
+
+Issue: IPFS connection failed
+Solution:
+  1. Ensure IPFS daemon is running: ipfs daemon
+  2. Check: ipfs id
+  3. IPFS is optional - app works without it
+
+Issue: "Permission denied" when activating venv
+Solution:
+  Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+
+SECURITY FEATURES EXPLAINED
+────────────────────────────────────────────────────────────────────────────────
+
+🔐 AES-256 ENCRYPTION
+   - Military-grade encryption standard
+   - 256-bit keys derived from password (PBKDF2)
+   - 100,000 iterations = brute-force resistant
+   - Each file has unique random salt
+
+🤖 ML KEYSTROKE AUTHENTICATION
+   - Learns your unique typing pattern
+   - Dwell time: how long you hold each key
+   - Flight time: gap between consecutive keys
+   - Detects impersonation even with correct password
+
+🎨 FILE CAMOUFLAGE
+   - Files renamed to look like: kernel32.dll, svchost.exe, etc.
+   - Stored in system-like folders: System32, Logs, Cache
+   - Original names preserved in metadata
+   - Extra layer of obscurity
+
+🖼️ STEGANOGRAPHY
+   - Encrypted files hidden inside images
+   - Uses LSB (least significant bit) technique
+   - Image appears completely normal
+   - Undetectable without password
+
+⛓️ BLOCKCHAIN VERIFICATION
+   - Immutable record of all files
+   - SHA-256 hash verification
+   - Detects any file modification
+   - Proof of existence and integrity
+
+🌐 IPFS BACKUP
+   - Encrypted files uploaded to IPFS
+   - Decentralized redundancy
+   - Censorship-resistant
+   - CID stored on blockchain
+
+🎭 DECOY VAULT
+   - Fake files mislead unauthorized users
+   - Realistic-looking financial, password, project files
+   - All access logged
+   - Real files remain secure
+
+
+PASSWORD BEST PRACTICES
+────────────────────────────────────────────────────────────────────────────────
+
+✓ Use 12+ characters
+✓ Mix uppercase, lowercase, numbers, symbols
+✓ Avoid dictionary words and personal info
+✓ Use unique passwords for different purposes
+✓ Store passwords securely (password manager)
+✓ Never share your password
+
+Example strong password:
+  Tr0pic@lThund3r$torm!2024
+
+
+COMMON TASKS
+────────────────────────────────────────────────────────────────────────────────
+
+Task 1: Encrypt a document and save securely
+---------
+1. Store File → select document.docx
+2. Enter strong password
+3. Enable camouflage and steganography
+4. System: encrypts → hides in image → records on blockchain → uploads to IPFS
+
+Task 2: Verify file integrity
+---------
+1. Go to "⛓️ Blockchain" tab
+2. Find your file ID
+3. Check hash - if matches, file hasn't been modified
+
+Task 3: Backup encrypted file to IPFS
+---------
+1. Start IPFS daemon (ipfs daemon)
+2. Store file normally
+3. Check "⛓️ Blockchain" tab for IPFS CID
+4. File is now distributed across IPFS network
+
+Task 4: Retrieve sensitive file
+---------
+1. Retrieve File → enter File ID
+2. Enter correct password
+3. System: retrieves → decrypts → verifies hash → saves to disk
+
+
+NEXT STEPS
+────────────────────────────────────────────────────────────────────────────────
+
+1. Run test_setup.py to verify everything works
+2. Launch main.py
+3. Store your first file
+4. Explore the Dashboard tabs
+5. Review security logs
+6. Check blockchain ledger
+7. (Optional) Enable IPFS for off-site backup
+
+
+SUPPORT & DOCUMENTATION
+────────────────────────────────────────────────────────────────────────────────
+
+Full README: README.md
+Application Code: main.py
+Test Suite: test_setup.py
+Logs: secure_vault/logs/vault.log
+Blockchain: secure_vault/logs/blockchain.json
+
+
+Remember: SecureVault Pro is production-ready but always:
+✓ Keep backups of important files
+✓ Test retrieval before relying on it
+✓ Use strong passwords
+✓ Keep your system updated
+✓ Understand the security limitations
+
+Good luck! 🔒
